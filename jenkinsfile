@@ -1,0 +1,16 @@
+pipeline {
+    agent {node 'docker-agent'}
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hola, Jenkins está funcionando en Docker'
+            }
+        }
+        stage("Script"){
+            steps {
+                sh 'echo "Este es un script ejecutándose en el agente Docker"'
+            }
+        }
+    }
+}
